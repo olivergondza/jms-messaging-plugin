@@ -35,6 +35,8 @@ import jenkins.model.Jenkins;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import org.kohsuke.accmod.Restricted;
+import org.kohsuke.accmod.restrictions.NoExternalUse;
 import org.kohsuke.stapler.DataBoundConstructor;
 import org.kohsuke.stapler.DataBoundSetter;
 import org.kohsuke.stapler.QueryParameter;
@@ -604,6 +606,11 @@ public class CIBuildTrigger extends Trigger<BuildableItem> {
             }
             return null;
         }
+
+        @Restricted(NoExternalUse.class) // Jelly
+        public static List<ProviderData.ProviderDataDescriptor> getProviderDataDescriptorTypes() {
+			return ProviderData.ProviderDataDescriptor.all();
+		}
 	}
 
 	static Object getLock(String name) {
