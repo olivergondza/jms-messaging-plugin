@@ -31,7 +31,7 @@
     <f:checkbox default="false"/>
   </f:entry>
   <f:entry title="TBD Providers, I guess">
-    <f:hetero-list descriptors="${descriptor.providerDataDescriptorTypes}" items="${it.providerData}" name="providerData"/>
+    <f:hetero-list descriptors="${descriptor.providerDataDescriptorTypes}" items="${it.providerData}" name="providerData" oneEach="false"/>
   </f:entry>
 
   <!--
